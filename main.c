@@ -54,7 +54,8 @@ void pinIsr() {
         TMR0_StopTimer();
         isRunning = 0;
         
-    } else {
+    } 
+    else {
         TMR0_StartTimer();
         isRunning = 1;
     }
@@ -86,7 +87,9 @@ void main(void)
 
     while (1)
     {
-
+        if(isRunning == 0) {
+            SLEEP();
+        }
     }
 }
 /**
